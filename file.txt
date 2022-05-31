@@ -34,3 +34,35 @@ post: curl -i -X POST -d {}  http://162.55.220.72:5005/terminal-hw-request
 
 $  curl -s "http://162.55.220.72:5005/get_method?name=sash&age=1"
 
+
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+touch script.sh
+vim script.sh
+
+вставляем в скрипт содержимое
+
+
+
+#! /bin/bash
+mkdir hw_1
+cd hw_1
+mkdir hw_2 hw_3 hw_4
+cd hw_2
+touch 1.txt 2.txt 3.txt 4.json 5.json
+mkdir hw_2.2 hw_2.3 hw_2.4
+ls -la
+cd ..
+mv hw_2/2.txt hw_2/3.txt hw_3
+
+или
+
+#! /bin/bash
+mkdir hw_1 && cd hw_1 && mkdir hw_2 hw_3 hw_4 && cd hw_2 && touch 1.txt 2.txt 3.txt 4.json 5.json && mkdir hw_2.2 hw_2.3 hw_2.4 && ls -la && cd .. && mv hw_2/2.txt hw_2/3.txt hw_3
+
+выполняем скрипт
+
+./script.sh
+
